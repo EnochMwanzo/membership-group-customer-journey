@@ -1,0 +1,13 @@
+{% extends 'email.html' %}
+{% block content %}
+<h1 style="margin: .67em 0; font-size:2em">You cancelled your membership</h1>
+<p style="margin: 1em 0;">Dear {{ customer['username'] }},</p>
+<p style="margin: 1em 0;">We are sorry to see you go. Please take a survey to let us know more about why you are leaving, and what we can do to improve.</p>
+<p style="margin: 1em 0;">Whenever you are ready, {{ customer['username'] }} you can <a href="#">renew your membership.</a></p>
+<p style="margin: 1em 0;">Sincerely, The Mental Health Group</p>
+<div class="spacer" style="line-height:3em;height:3em;">&nbsp;</div>
+<a class="cta" href="#" style="background-color: #293449; color: #d5dbe6; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  Survey
+</a>
+<div class="spacer" style="line-height:3em;height:3em;">&nbsp;</div>
+{% endblock %}

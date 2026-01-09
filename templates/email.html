@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <title>Email title</title>
+  <style>
+    .cta:hover {
+      background: #364561!important;
+      font-size: 1.1em;
+    }
+
+    @media (prefers-color-scheme: dark) { 
+      .body-container {
+        background: #293449!important;
+        color: #d5dbe6!important;
+      }
+
+      .cta {
+        background: #d5dbe6!important;
+        color: #293449!important;
+      }
+
+      .cta:hover {
+        background: #a5b3cc!important;
+      }
+
+      .link {
+        color:#d5dbe6;
+      }
+
+      .footer-container {
+        background: #293449!important;
+      }
+
+      span {
+        background: #d5dbe6!important;
+        color: #293449!important;
+      }
+    }
+
+    @media screen and (min-width:600px) {
+      .wrapper {
+        max-width: 600px!important;
+      }
+    }
+  </style>
+  {% block additional_styles %}
+  {% endblock %}
+</head>
+<body class="body">
+  <div role="article" aria-label="Fitness Newsletter" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
+    <div style="display:none">
+      Preview text...
+    </div>
+    <div style="background:#111;">
+      <div class="wrapper" style="max-width:480px; margin:0 auto;background:#d5dbe6">
+        <div class="heading" style="background-color: #293449; color: #d5dbe6; font-size: 1em; text-align: center;">
+          <span class="material-symbols-outlined" style="margin-top: 0.5em;">local_florist</span>
+          <p style="margin: 0 auto;">Mental Health Membership Group</p>
+        </div>
+        <div class="body-container" style="background-color: #d5dbe6; color: #293449; text-align: center; font-size: 1em;">
+        {% block content %}
+          <picture>
+            <source srcset="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg" type="image/jpeg" media="(prefers-color-scheme: dark)">
+            <img alt="yoga" src="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg" style="height: auto;width: 100%;">
+          </picture>
+          <h1 style="font-size: 3.75em;">How are we doing?</h1>
+          <p>
+            Dear {{ customer['username'] }},
+          </p>
+          <p style="margin: auto 2em;">
+            {{ customer['mental_health_challenge'] }} is hard to deal with on your own. Our group can help. We have sessions for {% if customer['age'] < 30 %} young {% endif %} {% if customer['gender'] =='F' %} women {% else %} men {% endif %} going through the same thing. When you're ready, check out what other people have to say about the group. {% if customer['device'] in ['Mobile', 'Tablet'] %} You may want to download our <a href="#"> {{ customer['device'] }} app.</a> {% endif %}
+          </p>
+          <p>
+            Sincerely, The Mental Health Group Team
+          </p>
+          <div>
+            <a class="cta" href="#" style="background-color: #293449; color: #d5dbe6; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+              Read Case Studies
+            </a>
+          </div>
+          <div class="spacer" style="line-height:3em;height:3em;">&nbsp;</div>
+          {% endblock %}
+        <div>
+            <a class="link" href="#" style="text-decoration: none; color: #293449;">reallygreatsite.com</a>
+          <div class="footer-container" role="presentation" style="font-size: 1em; width: 100%; text-align: center; background: #d5dbe6; text-decoration: none; display:table;">
+            <div style="display: table-cell; width:50%;">
+              <a href="#" style="text-decoration: none">
+                <span class="material-symbols-outlined" style="color: #d5dbe6; background: #293449; border-radius: 2em; padding: 5px; margin: 0.5em">settings_phone</span>
+              </a>
+              <a href="#" style="text-decoration: none;">
+                <span class="material-symbols-outlined" style="color: #d5dbe6; background: #293449; border-radius: 2em; padding: 5px; margin: 0.5em">mail</span>
+              </a>
+            </div>
+            <div style="display: table-cell; width:50%;">
+              <a href="#" style="text-decoration: none;">
+                <span class="material-symbols-outlined" style="color: #d5dbe6; background: #293449; border-radius: 2em; padding: 5px; margin: 0.5em">mail</span>
+              </a>
+              <a href="#" style="text-decoration: none;">
+                <span class="material-symbols-outlined" style="color: #d5dbe6; background: #293449; border-radius: 2em; padding: 5px; margin: 0.5em">settings_phone</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

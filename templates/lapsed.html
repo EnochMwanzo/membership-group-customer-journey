@@ -1,0 +1,67 @@
+{% extends 'email.html'%}
+{% block additional_styles %}
+<style>
+  @media screen and (min-width: 600px) {
+    .column-group {
+      display: table;
+      width: 100%;
+    }
+    
+    .column {
+      display: table-cell!important;
+      width: 50%
+    }
+  }
+</style>
+{% endblock %}
+{% block content %}
+{% if customer['gender'] =='M' %}
+<img src="https://unsplash.com/photos/TkrRvwxjb_8/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY1Mzc4OTU5fA&force=true&w=640" alt="four men laughing by green valley" style="display: block; width: 100%;">
+{% else %}
+<img src="https://unsplash.com/photos/IjkIOe-2fF4/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8d29tZW5zJTIwZ3JvdXB8ZW58MHx8fHwxNzY1Mzc5MDkxfDA&force=true&w=640" alt="four women in meeting" style="display: block; width: 100%;">
+{% endif %}
+<h1 style="font-size: 3.75em;">What our members have to say</h1>
+<p>
+  Dear {{ customer['username'] }},
+</p>
+<p style="margin: auto 2em;">
+  We noticed you have not logged in for months. Do you feel like you're not getting much out of the group? Read what other {% if customer['gender']=='M' %} men {% else %} women {% endif %} who joined think to help you make a decision.
+</p>
+{% endblock %}
+<div class="column-group" role="presentation">
+  <div class="column">
+    {% if customer['gender'] =='M' %}
+    <img src="https://unsplash.com/photos/TkrRvwxjb_8/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY1Mzc4OTU5fA&force=true&w=640" alt="female group member" style="display: block; width: 100%;">
+    {% else %}
+    <img src="https://unsplash.com/photos/IjkIOe-2fF4/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8d29tZW5zJTIwZ3JvdXB8ZW58MHx8fHwxNzY1Mzc5MDkxfDA&force=true&w=640" alt="male group member" style="display: block; width: 100%;">
+    {% endif %}
+  </div>
+  <div class="column">
+    <p style="margin: auto 2em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+<hr>
+<div class="column-group" role="presentation">
+  <div class="column">
+    {% if customer['gender'] =='M' %}
+    <img src="https://unsplash.com/photos/TkrRvwxjb_8/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY1Mzc4OTU5fA&force=true&w=640" alt="female group member" style="display: block; width: 100%;">
+    {% else %}
+    <img src="https://unsplash.com/photos/IjkIOe-2fF4/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8d29tZW5zJTIwZ3JvdXB8ZW58MHx8fHwxNzY1Mzc5MDkxfDA&force=true&w=640" alt="male group member" style="display: block; width: 100%;">
+    {% endif %}
+  </div>
+  <div class="column">
+    <p style="margin: auto 2em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+<hr>
+<p style="margin: auto 2em;">
+  We hope you found these testimonials helpful, {{customer['username'}}. When your ready, subscribe to become part of the group! For more information, you may want to <a href="#">learn about our founder</a>.
+</p>
+<p style="margin: 1em 0;">Sincerely, The Mental Health Group</p>
+<div>
+  <a class="cta" href="#" style="background-color: #293449; color: #d5dbe6; text-decoration: none; display:inline-block; border-radius:2em; padding: .5em 2em;">
+    view subscription plans
+  </a>
+</div>
+{% endblock %}
+

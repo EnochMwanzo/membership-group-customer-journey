@@ -1,0 +1,7 @@
+{% extends 'email.html' %}
+{% block content %}
+<h1 style="margin: .67em 0; font-size:2em">Your first time leading a session!</h1>
+<p style="margin: 1em 0;">Dear {{ customer['username'] }},</p>
+<p style="margin: 1em 0;">Congratulations on hosting your first group session! We hope you continue to host sessions for our members. If you need any support with leading group, let us know.</p>
+<p style="margin: 1em 0;">Sincerely, The Mental Health Group</p>
+{% endblock %}

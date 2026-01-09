@@ -1,0 +1,9 @@
+{% extends 'email.html' %}
+{% block content %}
+<img src="https://placehold.net/600x400.png" alt="{{ group['session_name'] }}"style="display:block; width:100%;">
+<h1 style="margin: .67em 0; font-size:2em">You have a session booked</h1>
+<p style="margin: 1em 0;">Dear {{ customer['username'] }},</p>
+<p style="margin: 1em 0;">You have booked a session for {{ group['session_name'] }}</p>
+<p style="margin: 1em 0;">We hope to see you there!</p>
+<p style="margin: 1em 0;">Sincerely, The Mental Health Group Team</p>
+{% endblock %}

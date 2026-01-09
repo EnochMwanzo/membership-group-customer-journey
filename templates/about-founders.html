@@ -1,0 +1,55 @@
+{% extends 'email.html' %}
+{% block additional_styles %}
+<style>
+  @media (prefers-color-scheme: dark) {
+    span.picture-fallback img {
+      opacity: 0;
+    }
+    span.picture-fallback picture img {
+      opacity: 1;
+    }
+  }
+</style>
+{% endblock %}
+{% block content %}
+<span class="picture-fallback" style="display: inline-block; background-image: url(https://unsplash.com/photos/pqT4v--8s-c/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY1Mjk1ODQ4fA&force=true&w=640); background-repeat: no-repeat; background-size: contain;">
+  <picture>
+    <source srcset="https://unsplash.com/photos/pqT4v--8s-c/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY1Mjk1ODQ4fA&force=true&w=640" type="image/png" media="(prefers-color-scheme: dark)">
+    <img src="https://unsplash.com/photos/EXtnZW9NbqM/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY1Mjk2MzI3fA&force=true&w=640" alt="the founder of the group" style="width: 100%">
+  </picture>
+</span>
+<h1 style="font-size: 3.75em;">Meet our Founder</h1>
+<div style="text-align: left;">
+<p>
+Dear {{ variable['name'] }},
+</p>
+<p style="margin: auto 2em;">
+  We would like to tell you about our founder. {% if variable['condition'] == 'MH2' %} Just like you, she also had to deal with MH2. {% else %} She sruggled with MH2 {% endif %} {% if variable['age'] in range(18,24) %} when she was your age. {% else %} for a long time. {% endif %}
+</p>
+<p style="margin: auto 2em;">
+  What helped her was joining a group. Now, she has created this group to help others.
+</p>
+<blockquote>
+  <hr>
+  I love being able to help people overcome the same things I went through.
+  <hr>
+</blockquote>
+<p style="margin: auto 2em;">&mdash; Founder</p>
+</div>
+<p style="margin: auto 2em;">
+  {{ variable['name'] }}, if our founder's story resonates with you, please consider joining the group. We have several subscription options.
+</p>
+<p>Sincerely, The Mental Health Group Team</p>
+<div>
+  <a class="cta" href="localhost:5001/click" style="background-color: #293449; color: #d5dbe6; text-decoration: none; display:inline-block; border-radius:2em; padding: .5em 2em;">
+    view subscription plans
+  </a>
+</div>
+<div style="display: none">
+<form method="post" action="http://127.0.0.1:5001/click">
+  <div name="name" value="MNAKLIB"></div>
+  <input name="gender" value="{{ variable['gender'] }}">
+</div>
+<input type="submit" value="Submit">
+</form>
+{% endblock %}

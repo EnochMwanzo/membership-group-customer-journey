@@ -1,0 +1,34 @@
+{% extends 'email.html' %}
+{% block content %}
+<img src="https://unsplash.com/photos/IjkIOe-2fF4/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8d29tZW5zJTIwZ3JvdXB8ZW58MHx8fHwxNzY1Mzc5MDkxfDA&force=true&w=640" alt="four women in meeting" style="display: block; width: 100%;">
+<h1 style="font-size: 3.75em;">Thank you for joining</h1>
+<p>
+Dear {{ customer['username'] }},
+</p>
+<p style="margin: auto 2em;">
+  We are glad you decided to become part of the group. Now that you are a member, you have access to features like:
+</p>
+<ul style="list-style-type: square;">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Sed do eiusmod tempor incididunt ut</li>
+</ul>
+<p>When you are ready, you can join your first session. Here are a couple you might consider:</p>
+{% for i in groups %}
+<h2 style="font-size: 2em;">{{ i['session_name'] }}</h2>
+<p>{{ i['session_description'] }}</p>
+{% if i['number_of_members'] == 0 %}
+There's no one in the group yet, but as soon as some people join, they will meet {{ i['schedule'] }}.
+{% else %}
+There are {{ i['number_of_members'] }} people meeting {{ i['schedule'] }}.
+{% endif %}
+{% endfor %}
+  <a class="cta" href="#" style="background-color: #293449; color: #d5dbe6; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+    Book a Group Session
+  </a>
+{% if customer['paying_member'] == 'FALSE' %}
+<p>We also have a premium membership. In addition what you're getting now, Premium will grant you access to <i>Vestibulum eleifend quis est eu imperdiet</i>. We hope these features can make your experience in the group even better.</p>
+{% endif %}
+<p>Sincerely, The Mental Health Group Team</p>
+{% endblock %}
+

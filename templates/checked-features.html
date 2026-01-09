@@ -1,0 +1,36 @@
+{% extends 'email.html' %}
+{% block content %}
+<h1 style="margin: .67em 0; font-size:2em">Overview of features.</h1>
+<p style="margin: 1em 0;">Dear {{ customer['username'] }},</p>
+<p style="margin: 1em 0;">It looks like you have been checking out the features of our membership. Here is a detailed guide of what we offer:</p>
+<div style="display:table">
+  <div style="display:table-cell;width:50%">
+    <p style="margin: 1em 0;">Benefit 1</p>
+  </div>
+  <div style="display:table-cell;width:50%">
+    <p style="margin: 1em 0;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+  </div>
+</div>
+<div style="display:table">
+  <div style="display:table-cell;width:50%">
+    <p style="margin: 1em 0;">Benefit 2</p>
+  </div>
+  <div style="display:table-cell;width:50%">
+    <p style="margin: 1em 0;">In et elit nec metus gravida vehicula. Proin ac lorem non mi tristique mollis. Quisque dapibus, felis ut mattis dignissim, sem lorem egestas purus, nec commodo mauris sapien volutpat ante. Donec mattis ultricies neque nec imperdiet.</p>
+  </div>
+</div>
+<div style="display:table">
+  <div style="display:table-cell;width:50%">
+    <p style="margin: 1em 0;">Benefit 3</p>
+  </div>
+  <div style="display:table-cell;width:50%">
+    <p style="margin: 1em 0;">Suspendisse rutrum vel ipsum sed mattis. Etiam ultricies diam ut odio hendrerit, nec gravida lorem lobortis. Donec tincidunt nec sapien in luctus. Donec in ligula at lectus aliquam accumsan et a est. Etiam pharetra orci volutpat, aliquet magna at, rutrum ante.</p>
+  </div>
+</div>
+<p style="margin: 1em 0;">We hope you find this information useful in deciding you want to join our group. We are here for you whenver you are ready.</p>
+<p style="margin: 1em 0;">Sincerely, The Mental Health Group</p>
+<div class="spacer" style="line-height:3em;height:3em;">&nbsp;</div>
+<a class="cta" href="#" style="background-color: #293449; color: #d5dbe6; text-decoration: none; display:inline-block; border-radius:16px; padding: .5em 2em;">
+  Become a Member
+</a>
+{% endblock %}
