@@ -1,5 +1,5 @@
 # membership-group-customer-journey
-There are many different tools for automate marketing campaigns like Braze, Klaviyo, Iterable, Cordial, and others. I created this project to show how I would code a customer journey using Python, since I am already familiar with it. I use a membership group that hosts group sessions to talk about for mental health as an example, and I use Flask to handle creating and sending emails to a fake SMTP server running locally, <a href=https://github.com/rnwood/smtp4dev/tree/master> smtp4dev </a>. I hope this project demonstrates that I understand the fundaments of email automation and that I shouldn't have challenge using any ESP.
+There are many different tools for automating marketing campaigns like Braze, Klaviyo, Iterable, Cordial, and others. I created this project to show how I would code a customer journey using Python, since I am already familiar with it. I use a membership group that hosts group sessions to talk about for mental health as an example, and I use Flask to handle creating and sending emails to a fake SMTP server running locally, <a href=https://github.com/rnwood/smtp4dev/tree/master> smtp4dev </a>. I hope this project demonstrates that I understand the fundaments of email automation and that I shouldn't have learning any ESP.
 
 ### What is the goal
 The goal of the group would be to have loyal group members paying for their membership. Customers will not start out that way, so by working backwards we would realize that in order to be loyal the customer has to interact with the group for some time, and the customer has to feel the value of the group before they start paying. One process for getting the customer to this could be:
@@ -80,7 +80,8 @@ Here are a couple examples of how the final email would look in an inbox. I used
 <img src="" alt="welcome email example 1" style="display: inline-block; width: 40%;">
 <img src="" alt="welcome email example 2" style="display: inline-block; width: 40%;">
 </div>
-The code has similar functions for every conversion event and some other situations I thought of where the group may need to email a customer. The database also has data on the groups and sessions that customers sign up for. I will eventually write about them all here. For example I included a sequence where a customer can become a leader for group sessions:
+The code has similar functions for every conversion event and some other situations I thought of where the group may need to email a customer. The database also has data on the groups and sessions that customers sign up for. I will eventually write about them all here. For example I included a sequence where a loyal paying member can become a leader for group sessions.
+
 ```py
 number_of_sessions = convert_to_dict(cur.execute(
     "SELECT COUNT (*) AS number_of_sessions FROM bookings WHERE customer_id = ? AND attended = 'TRUE'", [customer_id]
