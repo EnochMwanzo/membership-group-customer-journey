@@ -77,8 +77,8 @@ Snippet of the html
 ```
 Here are a couple examples of how the final email would look in an inbox. I used random functions to generate usernames and random customer attributes.
 <div style="display:flex; justify-content:space-between;"> 
-<img src="" alt="welcome email example 1" style="display: inline-block; width: 40%;">
-<img src="" alt="welcome email example 2" style="display: inline-block; width: 40%;">
+<img src="https://github.com/EnochMwanzo/membership-group-customer-journey/blob/main/examples/welcome-email-example-1.png" alt="welcome email example 1" style="display: inline-block; width: 40%;">
+<img src="https://github.com/EnochMwanzo/membership-group-customer-journey/blob/main/examples/welcome-email-example-2.png" alt="welcome email example 2" style="display: inline-block; width: 40%;">
 </div>
 The code has similar functions for every conversion event and some other situations I thought of where the group may need to email a customer. The database also has data on the groups and sessions that customers sign up for. I will eventually write about them all here. For example I included a sequence where a loyal paying member can become a leader for group sessions.
 
