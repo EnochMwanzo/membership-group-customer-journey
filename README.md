@@ -1,7 +1,7 @@
 # membership-group-customer-journey
-There are many different tools for automating marketing campaigns like Braze, Klaviyo, Iterable, Cordial, and others. I created this project to show how I would code a customer journey using Python, since I am already familiar with it. I use a membership group that hosts group sessions to talk about for mental health as an example, and I use Flask to handle creating and sending emails to a fake SMTP server running locally, <a href=https://github.com/rnwood/smtp4dev/tree/master> smtp4dev </a>. I hope this project demonstrates that I understand the fundaments of email automation and that I shouldn't have learning any ESP.
+There are many different tools for automating marketing campaigns like Braze, Klaviyo, Iterable, Cordial, and others. I created this project to show how I would code a customer journey using Python, since I am already familiar with it. I use a membership group that hosts group sessions to talk about for mental health as an example, and I use Flask to handle creating and sending emails to a fake SMTP server running locally, <a href=https://github.com/rnwood/smtp4dev/tree/master> smtp4dev </a>. I hope this project demonstrates that I understand the fundaments of email automation and that these ideas can be applied using a variety ESPs.
 
-### What is the goal
+### What is the goal of the campaign
 The goal of the group would be to have loyal group members paying for their membership. Customers will not start out that way, so by working backwards we would realize that in order to be loyal the customer has to interact with the group for some time, and the customer has to feel the value of the group before they start paying. One process for getting the customer to this could be:
 
 - Customer signs up to become part of the group
