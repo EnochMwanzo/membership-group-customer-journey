@@ -80,7 +80,7 @@ Here are a couple examples of how the final email would look in an inbox. I used
 <img src="https://github.com/EnochMwanzo/membership-group-customer-journey/blob/main/examples/welcome-email-example-1.png" alt="welcome email example 1" style="display: inline-block; width: 40%;">
 <img src="https://github.com/EnochMwanzo/membership-group-customer-journey/blob/main/examples/welcome-email-example-2.png" alt="welcome email example 2" style="display: inline-block; width: 40%;">
 </div>
-The code has similar functions for every conversion event and some other situations I thought of where the group may need to email a customer. The database also has data on the groups and sessions that customers sign up for. I will eventually write about them all here. For example I included a sequence where a loyal paying member can become a leader for group sessions.
+The code has similar functions for every conversion event and some other situations I thought of where the group may need to email a customer. The database also has data on the groups and sessions that customers sign up for. For example I included a sequence where a loyal paying member can become a leader for group sessions.
 
 ```py
 number_of_sessions = convert_to_dict(cur.execute(
@@ -96,3 +96,5 @@ if number_of_sessions['number_of_sessions'] > 50 and customer_data['paying_membe
     template = render_template("qualify-for-leader.html", customer=customer_data)
     return f'qualified to be group leader\n'
 ```
+
+I will document all the functions in functions.md
